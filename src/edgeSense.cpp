@@ -19,7 +19,8 @@
 #define WLAN_PASS "Marabogdan2016" //WLAN Password
 
 // MQTT Connection Config
-const char *mqtt_server = "test.mosquitto.org"; // MQTT Server IP Address
+//const char *mqtt_server = "test.mosquitto.org"; // MQTT Server IP Address
+IPAddress mqtt_server(192, 168, 1, 218);
 #define MQTT_PORT 1883                          // MQTT Server port number, use 8883 for SSL
 
 // HC-SR04 Ultrasonic Distance Measuring Module Config
