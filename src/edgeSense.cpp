@@ -19,14 +19,14 @@
 #define WLAN_PASS "Marabogdan2016" //WLAN Password
 
 // MQTT Connection Config
-const char *mqtt_server = "192.168.1.218"; // MQTT Server IP Address
+const char *mqtt_server = "test.mosquitto.org"; // MQTT Server IP Address
 #define MQTT_PORT 1883                          // MQTT Server port number, use 8883 for SSL
 
 // HC-SR04 Ultrasonic Distance Measuring Module Config
 #define TRIGGER_PIN 4    // D2  Pin assignment for HC-SR04 sensor module Trigger
 #define ECHO_PIN 5       // D1  Pin assignment for HC-SR04 sensor module Echo
 #define MAX_DISTANCE 500 // Max distance (cm) for the module to register
-#define PING_DELAY 20    // Time delay befre (re)sending ping
+#define PING_DELAY 50    // Time delay befre (re)sending ping
 
 // LED Warning Lights Config
 #define RED_PIN 14   // Pin assignment for Red LED
@@ -53,14 +53,13 @@ void callback(char *topic, byte *payload, unsigned int length);
 void reconnect();
 void setColor(int red, int green, int blue);
 
+// Instantiate Ultrasonic Distance Measuring Module
+NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 
 // Instantiate WiFi Client
 WiFiClient espClient;
 //WiFiClientSecure client;
 PubSubClient client(espClient);
-
-// Instantiate Ultrasonic Distance Measuring Module
-NewPing sonar(TRIGGER_PIN, ECHO_PIN, MAX_DISTANCE); // NewPing setup of pins and maximum distance.
 
 /************************* General Setup Routine *********************************/
 
