@@ -1,10 +1,9 @@
-/* IoT Car
 // Measures distance to car in front
 // Led Indicator:
 // Green - Safe
 // Blue - Optimal
-// Red - Too Close
- */
+// Red - Danger
+
 /************************* Includes *********************************/
 #include <Arduino.h>
 #include <ESP8266WiFi.h>
