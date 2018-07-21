@@ -25,7 +25,7 @@ IPAddress mqtt_server(192, 168, 1, 218);
 // HC-SR04 Ultrasonic Distance Measuring Module Config
 #define TRIGGER_PIN 4    // D2  Pin assignment for HC-SR04 sensor module Trigger
 #define ECHO_PIN 5       // D1  Pin assignment for HC-SR04 sensor module Echo
-#define MAX_DISTANCE 500 // Max distance (cm) for the module to register
+#define MAX_DISTANCE 100 // Max distance (cm) for the module to register
 #define PING_DELAY 50    // Time delay befre (re)sending ping
 
 // LED Warning Lights Config
@@ -34,7 +34,7 @@ IPAddress mqtt_server(192, 168, 1, 218);
 #define BLUE_PIN 12  // Pin assignment for Blue LED
 
 /************************* Runtime Parameters *********************************/
-double optimalDist = 10;  // optimal distance
+double optimalDist = 20;  // optimal distance
 double optimalFactor = 1; // optimal distance correction factor
 double correctedOptimalDist;
 int margin = 4;            // margin for optimal distance
