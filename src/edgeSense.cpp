@@ -19,7 +19,7 @@
 #define WLAN_PASS "Marabogdan2016" //WLAN Password
 
 // MQTT Connection Config
-const char *mqtt_server = "test.mosquitto.org"; // MQTT Server IP Address
+const char *mqtt_server = "192.168.1.218"; // MQTT Server IP Address
 #define MQTT_PORT 1883                          // MQTT Server port number, use 8883 for SSL
 
 // HC-SR04 Ultrasonic Distance Measuring Module Config
@@ -133,14 +133,14 @@ void loop()
         if ((distance >= correctedOptimalDist) and (distance <= correctedOptimalDist + margin))
         {
             setColor(0, 255, 0); // blue
-            distState = "Safe";
+            distState = "Optimal";
         }
         else
         {
             if ((distance == 0) or (distance > correctedOptimalDist))
             {
                 setColor(0, 0, 255); // green
-                distState = "Optimal";
+                distState = "Safe";
             }
         }
     }
